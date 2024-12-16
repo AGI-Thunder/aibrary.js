@@ -1,7 +1,7 @@
 {
   "name": "aibrary",
-  "version": "1.0.0",
-  "description": "Custom Node.js wrapper for OpenAI APIs",
+  "version": "0.0.1",
+  "description": "The official TypeScript library for the AiBrary API",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
