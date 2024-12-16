@@ -15,7 +15,11 @@
     "AI",
     "Node.js"
   ],
-  "author": "",
+  "author": "AiBrary",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AGI-Thunder/aibrary.js"
+  },
   "license": "Apache-2.0",
   "devDependencies": {
     "@types/node": "^22.10.2",
@@ -24,5 +28,9 @@
   },
   "dependencies": {
     "openai": "^4.76.3"
-  }
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module"
 }

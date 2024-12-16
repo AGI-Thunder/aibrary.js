@@ -18,7 +18,7 @@ export class AIBrary {
   constructor({ apiKey, baseURL }: AILibraryConfig) {
     this.openai = new OpenAI({
       apiKey,
-      baseURL: baseURL || "https://api.openai.com/v1", // Default OpenAI API URL
+      baseURL: baseURL || "https://api.openai.com/v1",
     });
   }
   async generateImage(
