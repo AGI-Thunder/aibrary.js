@@ -27,7 +27,7 @@
     "typescript": "^5.7.2"
   },
   "dependencies": {
-    "openai": "^4.76.3"
+    "openai": "^4.77.0"
   },
   "files": [
     "dist"
