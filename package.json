@@ -27,6 +27,7 @@
     "typescript": "^5.7.2"
   },
   "dependencies": {
+    "axios": "^1.7.9",
     "openai": "^4.77.0"
   },
   "files": [

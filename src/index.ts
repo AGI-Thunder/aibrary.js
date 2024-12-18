@@ -1,43 +1,27 @@
-import OpenAI from "openai";
+import { createOpenAIClient } from "./aibrary/config/OpenAIClient";
+import { ChatCompletion } from "./aibrary/resources/ChatCompletion";
+import { ImageGeneration } from "./aibrary/resources/ImageGeneration";
+import { SpeechToText } from "./aibrary/resources/SpeechToText";
+import { TextToSpeech } from "./aibrary/resources/TextToSpeech";
 
-type ImageSize =
-  | "256x256"
-  | "512x512"
-  | "1024x1024"
-  | "1792x1024"
-  | "1024x1792";
-
-interface AILibraryConfig {
-  apiKey: string;
-  baseURL?: string;
+interface AibraryConfig {
+  openAIApiKey: string;
+  ttsApiKey?: string;
+  ttsBaseUrl?: string;
 }
 
-export class AIBrary {
-  private openai: OpenAI;
+export class Aibrary {
+  chat: ChatCompletion;
+  image: ImageGeneration;
+  speechToText: SpeechToText;
+  textToSpeech: TextToSpeech;
 
-  constructor({ apiKey, baseURL }: AILibraryConfig) {
-    this.openai = new OpenAI({
-      apiKey,
-      baseURL: baseURL || "https://api.aibrary.dev/v0",
-    });
-  }
-  async generateImage(
-    prompt: string,
-    size: ImageSize,
-    model: string
-  ): Promise<any> {
+  constructor(config: AibraryConfig) {
+    const openai = createOpenAIClient(config.openAIApiKey);
 
-    try {
-      const response = await this.openai.images.generate({
-        prompt,
-        n: 1,
-        size,
-        model,
-      });
-      return response.data;
-    } catch (error) {
-      console.error("Error generating image:", error);
-      throw new Error("Failed to generate image");
-    }
+    this.chat = new ChatCompletion(openai);
+    this.image = new ImageGeneration(openai);
+    this.speechToText = new SpeechToText(config.openAIApiKey);
+    this.textToSpeech = new TextToSpeech(config.ttsApiKey || "", config.ttsBaseUrl);
   }
 }
