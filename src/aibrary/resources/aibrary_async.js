@@ -1,25 +1,22 @@
 const openai = require("openai");
 const axios = require("axios");
-const { AibraryChatCompletion } = require("./AibraryChatCompletion"); // Correct import path
-const { Model } = require("./Model"); // Ensure Model is imported if used for mapping
+const { AibraryChatCompletion } = require("./AibraryChatCompletion");  
+const { Model } = require("./Model");   
 const openai = require("openai");
 const axios = require("axios");
-const { AibraryChatCompletion } = require("./AibraryChatCompletion"); // Correct import path
-const { Model } = require("./models"); // Ensure Model is imported if used for mapping
+const { AibraryChatCompletion } = require("./AibraryChatCompletion");  
+const { Model } = require("./models");   
 
 class AsyncAiBrary {
   constructor({ apiKey } = {}) {
-    // Fetch API key from environment variables if not provided
     this.apiKey = apiKey || process.env.AIBRARY_API_KEY;
 
-    // Throw error if API key is missing
     if (!this.apiKey) {
       throw new Error(
         "The api_key client option must be set either by passing apiKey to the client or by setting the AIBRARY_API_KEY environment variable"
       );
     }
 
-    // Base URL for the API
     this.baseUrl = "https://api.aibrary.dev/v0";
 
     // Set OpenAI configuration
@@ -31,7 +28,6 @@ class AsyncAiBrary {
       completions: new AibraryChatCompletion(this),
     };
   }
-
   /**
    * Fetch all models from the API.
    * @param {Object} options
