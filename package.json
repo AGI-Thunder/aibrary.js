@@ -5,34 +5,34 @@
     "main": "dist/index.js",
     "types": "dist/index.d.ts",
     "scripts": {
-      "test": "jest",
-      "start": "node index.js"
+        "test": "jest",
+        "start": "node index.js"
     },
     "keywords": [
-      "openai",
-      "aibrary",
-      "AI",
-      "Node.js"
+        "openai",
+        "aibrary",
+        "AI",
+        "Node.js"
     ],
     "author": "AiBrary",
     "repository": {
-      "type": "git",
-      "url": "git+https://github.com/AGI-Thunder/aibrary.js.git"
+        "type": "git",
+        "url": "git+https://github.com/AGI-Thunder/aibrary.js.git"
     },
     "license": "Apache-2.0",
     "dependencies": {
-      "axios": "^1.7.9",
-      "dotenv": "^16.4.7",
-      "openai": "^4.77.0"
+        "axios": "^1.7.9",
+        "dotenv": "^16.4.7",
+        "openai": "^4.77.0"
     },
     "files": [
-      "dist"
+        "dist"
     ],
     "bugs": {
-      "url": "https://github.com/AGI-Thunder/aibrary.js/issues"
+        "url": "https://github.com/AGI-Thunder/aibrary.js/issues"
     },
     "homepage": "https://github.com/AGI-Thunder/aibrary.js#readme",
     "devDependencies": {
-      "jest": "^29.7.0"
+        "jest": "^29.7.0"
     }
-  }
+}
